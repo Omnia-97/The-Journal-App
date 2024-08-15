@@ -18,22 +18,19 @@ class JournalRecyclerAdapter(val context: Context, var journalList: List<Journal
         return MyViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-
-    }
-
+    override fun getItemCount(): Int = journalList.size
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-       val journal = journalList[position]
+        val journal = journalList[position]
         holder.bind(journal)
 
     }
 
     class MyViewHolder(var binding: JournalRowBinding) :
         RecyclerView.ViewHolder(binding.root) {
-            fun bind(journal : Journal){
-                binding.journal = journal
+        fun bind(journal: Journal) {
+            binding.journal = journal
 
-            }
+        }
 
     }
 }
